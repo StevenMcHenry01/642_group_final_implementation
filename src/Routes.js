@@ -1,13 +1,14 @@
-import * as React from 'react'
-import { lazy, Suspense } from 'react'
-import { Switch, Route } from 'react-router-dom'
-import Loading from './components/utils/Loading'
-import { CenteredDiv } from './styles/utils/CenteredDiv'
-import OtherPage from './pages/OtherPage'
+import * as React from "react";
+import { lazy, Suspense } from "react";
+import { Switch, Route } from "react-router-dom";
+import Loading from "./components/utils/Loading";
+import { CenteredDiv } from "./styles/utils/CenteredDiv";
+import OtherPage from "./pages/OtherPage";
 
 // Lazy Load Pages
-const Home = lazy(() => import('./pages/Home'))
-const DoesNotExist = lazy(() => import('./pages/404'))
+const Home = lazy(() => import("./pages/Home"));
+const ActivitiesPage = lazy(() => import("./pages/Activities"));
+const DoesNotExist = lazy(() => import("./pages/404"));
 
 export const Routes = () => (
   <>
@@ -19,13 +20,16 @@ export const Routes = () => (
       }
     >
       <Switch>
-        <Route exact={true} path='/'>
+        <Route exact={true} path="/">
           <Home />
         </Route>
-        <Route exact={true} path='/otherPage'>
+        <Route exact={true} path="/otherPage">
           <OtherPage />
         </Route>
 
+        <Route exact={true} path="/activities">
+          <ActivitiesPage />
+        </Route>
         {/* 404 route */}
         <Route>
           <DoesNotExist />
@@ -33,4 +37,4 @@ export const Routes = () => (
       </Switch>
     </Suspense>
   </>
-)
+);
