@@ -8,6 +8,7 @@ import {
   CardContent,
 } from "@material-ui/core";
 import CardMedia from "@material-ui/core/CardMedia";
+import ScrollContainer from 'react-indiana-drag-scroll'
 
 // My imports
 
@@ -17,8 +18,8 @@ const AcitivitiesPage = () => {
       <Box display="flex" flexDirection="column">
         <div>
           <b>Popular Restaraunts</b>
-          <Box display="flex" m="2">
-            <Card>
+          <ScrollContainer style={{display: 'flex', flexWrap: 'wrap', flexDirection: 'column', overflowX: 'auto', maxHeight: '400px'}}>
+            <Card style={{maxWidth: '200px', margin: '0 10px'}}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -41,7 +42,7 @@ const AcitivitiesPage = () => {
                 </CardContent>
               </CardActionArea>
             </Card>
-            <Card>
+            <Card style={{maxWidth: '200px', margin: '0 10px'}}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -64,7 +65,7 @@ const AcitivitiesPage = () => {
                 </CardContent>
               </CardActionArea>
             </Card>
-            <Card>
+            <Card style={{maxWidth: '200px', margin: '0 10px'}}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -87,7 +88,7 @@ const AcitivitiesPage = () => {
                 </CardContent>
               </CardActionArea>
             </Card>
-            <Card>
+            <Card style={{maxWidth: '200px', margin: '0 10px'}}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -110,7 +111,7 @@ const AcitivitiesPage = () => {
                 </CardContent>
               </CardActionArea>
             </Card>
-            <Card>
+            <Card style={{maxWidth: '200px', margin: '0 10px'}}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -133,7 +134,7 @@ const AcitivitiesPage = () => {
                 </CardContent>
               </CardActionArea>
             </Card>
-            <Card>
+            <Card style={{maxWidth: '200px', margin: '0 10px'}}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -156,7 +157,7 @@ const AcitivitiesPage = () => {
                 </CardContent>
               </CardActionArea>
             </Card>
-          </Box>
+          </ScrollContainer>
         </div>
         <div>
           <b>Most Visited Places</b>
