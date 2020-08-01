@@ -36,7 +36,11 @@ const AddActivityPage = () => {
           <label htmlFor="activity-end-time">End Time</label>
           <TextField type="datetime-local" id="activity-end-time" />
         </Box>
-        <Button>Add</Button>
+        <Box m={4}>
+          <Button variant="contained" color="primary">
+            Add
+          </Button>
+        </Box>
       </Box>
     </React.Fragment>
   );
