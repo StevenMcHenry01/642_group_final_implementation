@@ -21,7 +21,7 @@ const AcitivitiesPage = () => {
 
   return (
     <Box display="flex" flexDirection="column" overflow="scroll">
-      <Box m={1} display="flex">
+      <Box m={1} display="flex" justifyContent="space-between">
         <Box mt={2}>
           <SearchIcon fontSize="large" />
         </Box>
@@ -38,7 +38,14 @@ const AcitivitiesPage = () => {
             label="What's today's day look like?"
             style={{ flex: "1" }}
           />
-          <Button type="submit">Submit</Button>
+          <Button
+            variant="outlined"
+            color="primary"
+            type="submit"
+            style={{ maxWidth: "40px", maxHeight: "40px", margin: "auto" }}
+          >
+            Submit
+          </Button>
         </form>
       </Box>
       <Box my={2} mx={1}>

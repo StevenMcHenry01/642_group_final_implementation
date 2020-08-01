@@ -9,12 +9,13 @@ import {
   CardActionArea,
   Button,
   CardActions,
-  Typography
+  Typography,
 } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
-// import Typography from "material-ui/styles/typography";
 import ScrollContainer from "react-indiana-drag-scroll";
-
+import AttachMoney from "@material-ui/icons/AttachMoney";
+import DirectionsRun from "@material-ui/icons/DirectionsRun";
+import MoreVert from "@material-ui/icons/MoreVert";
 // My imports
 
 const ActivitiesResults = () => {
@@ -25,6 +26,28 @@ const ActivitiesResults = () => {
           <SearchIcon fontSize="large" />
         </Box>
         <TextField id="activity-search" label="Hiking" fullWidth={true} />
+      </Box>
+      <Box display="flex" justifyContent="space-around">
+        <Button
+          variant="contained"
+          style={{ textAlign: "center", borderRadius: "20px" }}
+        >
+          <AttachMoney style={{ fontSize: "1.25em", color: "gold" }} />
+          <AttachMoney style={{ fontSize: "1.25em" }} />
+          <AttachMoney style={{ fontSize: "1.25em" }} />
+        </Button>
+        <Button
+          variant="contained"
+          style={{ textAlign: "center", borderRadius: "20px" }}
+        >
+          <DirectionsRun style={{ fontSize: "1.25em" }} /> Distance
+        </Button>
+        <Button
+          variant="contained"
+          style={{ textAlign: "center", borderRadius: "20px" }}
+        >
+          <MoreVert style={{ fontSize: "1.25em" }} /> Type
+        </Button>
       </Box>
       <ScrollContainer
         style={{
@@ -37,34 +60,186 @@ const ActivitiesResults = () => {
           maxWidth: "350px",
         }}
       >
-        <Card>
-          <CardActionArea display="flex">
-            <Box>
+        <Card variant="outlined" style={{ margin: "8px 0 8px 0" }}>
+          <CardActionArea>
+            <Box display="flex">
               <CardMedia
                 component="img"
                 alt="Sample Result"
-                image="https://images.sampletemplates.com/wp-content/uploads/2015/08/restuarant.jpg"
+                image="https://cdn.glutenfreeliving.com/2019/12/Screen-Shot-2019-12-30-at-3.51.33-PM.png"
+                style={{ maxHeight: "150px", maxWidth: "150px" }}
                 title="Sample Result"
               />
-            </Box>
-            <Box>
-              <p>This text should be to the right of the image</p>
+              <Box m={2} style={{ width: "100%" }}>
+                <Typography variant="h6" style={{ marginBottom: "8px" }}>
+                  Sample Activity 1
+                </Typography>
+                <Box display="flex" justifyContent="space-between">
+                  <Typography variant="caption">Start Time:</Typography>
+                  <Typography variant="caption">XX:XX AM</Typography>
+                </Box>
+                <Box display="flex" justifyContent="space-between">
+                  <Typography variant="caption">End Time:</Typography>
+                  <Typography variant="caption">XX:XX AM</Typography>
+                </Box>
+              </Box>
             </Box>
           </CardActionArea>
         </Card>
-        <Card>
+        <Card variant="outlined" style={{ margin: "8px 0 8px 0" }}>
           <CardActionArea>
-            <CardMedia
-              component="img"
-              alt="Sample Result"
-              image="https://images.sampletemplates.com/wp-content/uploads/2015/08/restuarant.jpg"
-              title="Sample Result"
-            />
-            <CardContent>
-              <Typography>
-                Any MaterialUI component like this crashes the entire page
-              </Typography>
-            </CardContent>
+            <Box display="flex">
+              <CardMedia
+                component="img"
+                alt="Sample Result"
+                image="https://cdn.glutenfreeliving.com/2019/12/Screen-Shot-2019-12-30-at-3.51.33-PM.png"
+                style={{ maxHeight: "150px", maxWidth: "150px" }}
+                title="Sample Result"
+              />
+              <Box m={2} style={{ width: "100%" }}>
+                <Typography variant="h6" style={{ marginBottom: "8px" }}>
+                  Sample Activity 2
+                </Typography>
+                <Box display="flex" justifyContent="space-between">
+                  <Typography variant="caption">Start Time:</Typography>
+                  <Typography variant="caption">XX:XX AM</Typography>
+                </Box>
+                <Box display="flex" justifyContent="space-between">
+                  <Typography variant="caption">End Time:</Typography>
+                  <Typography variant="caption">XX:XX AM</Typography>
+                </Box>
+              </Box>
+            </Box>
+          </CardActionArea>
+        </Card>
+        <Card variant="outlined" style={{ margin: "8px 0 8px 0" }}>
+          <CardActionArea>
+            <Box display="flex">
+              <CardMedia
+                component="img"
+                alt="Sample Result"
+                image="https://cdn.glutenfreeliving.com/2019/12/Screen-Shot-2019-12-30-at-3.51.33-PM.png"
+                style={{ maxHeight: "150px", maxWidth: "150px" }}
+                title="Sample Result"
+              />
+              <Box m={2} style={{ width: "100%" }}>
+                <Typography variant="h6" style={{ marginBottom: "8px" }}>
+                  Sample Activity 3
+                </Typography>
+                <Box display="flex" justifyContent="space-between">
+                  <Typography variant="caption">Start Time:</Typography>
+                  <Typography variant="caption">XX:XX AM</Typography>
+                </Box>
+                <Box display="flex" justifyContent="space-between">
+                  <Typography variant="caption">End Time:</Typography>
+                  <Typography variant="caption">XX:XX AM</Typography>
+                </Box>
+              </Box>
+            </Box>
+          </CardActionArea>
+        </Card>
+        <Card variant="outlined" style={{ margin: "8px 0 8px 0" }}>
+          <CardActionArea>
+            <Box display="flex">
+              <CardMedia
+                component="img"
+                alt="Sample Result"
+                image="https://cdn.glutenfreeliving.com/2019/12/Screen-Shot-2019-12-30-at-3.51.33-PM.png"
+                style={{ maxHeight: "150px", maxWidth: "150px" }}
+                title="Sample Result"
+              />
+              <Box m={2} style={{ width: "100%" }}>
+                <Typography variant="h6" style={{ marginBottom: "8px" }}>
+                  Sample Activity 4
+                </Typography>
+                <Box display="flex" justifyContent="space-between">
+                  <Typography variant="caption">Start Time:</Typography>
+                  <Typography variant="caption">XX:XX AM</Typography>
+                </Box>
+                <Box display="flex" justifyContent="space-between">
+                  <Typography variant="caption">End Time:</Typography>
+                  <Typography variant="caption">XX:XX AM</Typography>
+                </Box>
+              </Box>
+            </Box>
+          </CardActionArea>
+        </Card>
+        <Card variant="outlined" style={{ margin: "8px 0 8px 0" }}>
+          <CardActionArea>
+            <Box display="flex">
+              <CardMedia
+                component="img"
+                alt="Sample Result"
+                image="https://cdn.glutenfreeliving.com/2019/12/Screen-Shot-2019-12-30-at-3.51.33-PM.png"
+                style={{ maxHeight: "150px", maxWidth: "150px" }}
+                title="Sample Result"
+              />
+              <Box m={2} style={{ width: "100%" }}>
+                <Typography variant="h6" style={{ marginBottom: "8px" }}>
+                  Sample Activity 5
+                </Typography>
+                <Box display="flex" justifyContent="space-between">
+                  <Typography variant="caption">Start Time:</Typography>
+                  <Typography variant="caption">XX:XX AM</Typography>
+                </Box>
+                <Box display="flex" justifyContent="space-between">
+                  <Typography variant="caption">End Time:</Typography>
+                  <Typography variant="caption">XX:XX AM</Typography>
+                </Box>
+              </Box>
+            </Box>
+          </CardActionArea>
+        </Card>
+        <Card variant="outlined" style={{ margin: "8px 0 8px 0" }}>
+          <CardActionArea>
+            <Box display="flex">
+              <CardMedia
+                component="img"
+                alt="Sample Result"
+                image="https://cdn.glutenfreeliving.com/2019/12/Screen-Shot-2019-12-30-at-3.51.33-PM.png"
+                style={{ maxHeight: "150px", maxWidth: "150px" }}
+                title="Sample Result"
+              />
+              <Box m={2} style={{ width: "100%" }}>
+                <Typography variant="h6" style={{ marginBottom: "8px" }}>
+                  Sample Activity 6
+                </Typography>
+                <Box display="flex" justifyContent="space-between">
+                  <Typography variant="caption">Start Time:</Typography>
+                  <Typography variant="caption">XX:XX AM</Typography>
+                </Box>
+                <Box display="flex" justifyContent="space-between">
+                  <Typography variant="caption">End Time:</Typography>
+                  <Typography variant="caption">XX:XX AM</Typography>
+                </Box>
+              </Box>
+            </Box>
+          </CardActionArea>
+        </Card>
+        <Card variant="outlined" style={{ margin: "8px 0 8px 0" }}>
+          <CardActionArea>
+            <Box display="flex">
+              <CardMedia
+                component="img"
+                alt="Sample Result"
+                image="https://cdn.glutenfreeliving.com/2019/12/Screen-Shot-2019-12-30-at-3.51.33-PM.png"
+                style={{ maxHeight: "150px", maxWidth: "150px" }}
+                title="Sample Result"
+              />
+              <Box m={2} style={{ width: "100%" }}>
+                <Typography variant="h6" style={{ marginBottom: "8px" }}>
+                  Sample Activity 7
+                </Typography>
+                <Box display="flex" justifyContent="space-between">
+                  <Typography variant="caption">Start Time:</Typography>
+                  <Typography variant="caption">XX:XX AM</Typography>
+                </Box>
+                <Box display="flex" justifyContent="space-between">
+                  <Typography variant="caption">End Time:</Typography>
+                  <Typography variant="caption">XX:XX AM</Typography>
+                </Box>
+              </Box>
+            </Box>
           </CardActionArea>
         </Card>
       </ScrollContainer>
