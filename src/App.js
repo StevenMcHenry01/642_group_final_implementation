@@ -1,6 +1,5 @@
 // third party imports
 import React from 'react'
-import styled from 'styled-components'
 import { ThemeProvider } from '@material-ui/core/styles'
 
 // my imports
@@ -15,10 +14,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <TopLayout>
         <TopNavbar />
-        <div style={{ width: '100%', flex: 1 }}>
-          <MainContentContainerStyled>
-            <Routes />
-          </MainContentContainerStyled>
+        <div style={{ flex: 1 }}>
+          <Routes />
         </div>
         <BottomNavbar />
       </TopLayout>
@@ -27,8 +24,3 @@ function App() {
 }
 
 export default App
-
-// STYLING
-const MainContentContainerStyled = styled.div`
-  padding: 1rem .5rem;
-`
