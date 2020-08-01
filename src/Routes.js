@@ -8,6 +8,7 @@ import OtherPage from "./pages/OtherPage";
 // Lazy Load Pages
 const Home = lazy(() => import("./pages/Home"));
 const ActivitiesPage = lazy(() => import("./pages/Activities"));
+const ActivitiesResults = lazy(() => import("./pages/ActivitiesResults"));
 const DoesNotExist = lazy(() => import("./pages/404"));
 
 export const Routes = () => (
@@ -30,6 +31,11 @@ export const Routes = () => (
         <Route exact={true} path="/activities">
           <ActivitiesPage />
         </Route>
+
+        <Route exact={true} path="/activities-results">
+          <ActivitiesResults />
+        </Route>
+
         {/* 404 route */}
         <Route>
           <DoesNotExist />

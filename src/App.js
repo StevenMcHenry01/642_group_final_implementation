@@ -15,10 +15,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <TopLayout>
         <TopNavbar />
-        <div style={{ width: "100%", flex: 1 }}>
-          <MainContentContainerStyled>
-            <Routes />
-          </MainContentContainerStyled>
+        <div style={{ flex: 1 }}>
+          <Routes />
         </div>
         <BottomNavbar />
       </TopLayout>
