@@ -9,9 +9,10 @@ import {
   CardActionArea,
   Button,
   CardActions,
+  Typography
 } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
-import Typography from "material-ui/styles/typography";
+// import Typography from "material-ui/styles/typography";
 import ScrollContainer from "react-indiana-drag-scroll";
 
 // My imports
@@ -60,9 +61,9 @@ const ActivitiesResults = () => {
               title="Sample Result"
             />
             <CardContent>
-              {/* <Typography>
+              <Typography>
                 Any MaterialUI component like this crashes the entire page
-              </Typography> */}
+              </Typography>
             </CardContent>
           </CardActionArea>
         </Card>
