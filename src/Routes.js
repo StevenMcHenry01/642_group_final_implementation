@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Loading from "./components/utils/Loading";
 import { CenteredDiv } from "./styles/utils/CenteredDiv";
 import OtherPage from "./pages/OtherPage";
+import AddActivityPage from "./pages/AddActivity";
 
 // Lazy Load Pages
 const Home = lazy(() => import("./pages/Home"));
@@ -34,6 +35,10 @@ export const Routes = () => (
 
         <Route exact={true} path="/activities-results">
           <ActivitiesResults />
+        </Route>
+
+        <Route exact={true} path="/add-activity">
+          <AddActivityPage />
         </Route>
 
         {/* 404 route */}
