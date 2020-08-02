@@ -4,6 +4,7 @@ import {
   TextField,
   FormControl,
   FormControlLabel,
+  Checkbox,
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
@@ -97,7 +98,9 @@ const NewTripForm = () => {
         </Typography>
         <TextField
           inputRef={register}
+          required
           id='startdate'
+          name='startdate'
           type='date'
           defaultValue='2020-08-05'
         />
@@ -108,18 +111,29 @@ const NewTripForm = () => {
         </Typography>
         <TextField
           inputRef={register}
+          required
           id='enddate'
+          name='enddate'
           type='date'
           defaultValue='2020-08-06'
         />
         <br />
         <br />
-        <input type='checkbox' value='flight' />
-        Do you want to add the flight ?<br />
-        <input type='checkbox' value='hotel' />
-        Do you want to add the hotel ?<br />
+        <FormControlLabel
+            control ={
+            <Controller as ={Checkbox} control ={control} name ="DoWantFlight" defaultValue={false}/>}
+            label= "Do you want to add the flight ?"
+        />
+        <FormControlLabel
+            control ={
+            <Controller as ={Checkbox} control ={control} name ="DoWantHotel" defaultValue={false}/>}
+            label= "Do you want to add the hotel ?"
+        />
         <br />
-        <Button type='submit' variant='contained'>Submit</Button>
+        <br />
+        <Button type='submit' 
+        variant='contained'
+        >Submit</Button>
       </form>
     </div>
   )
