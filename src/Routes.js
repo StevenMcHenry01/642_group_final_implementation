@@ -7,6 +7,7 @@ import OtherPage from './pages/OtherPage'
 
 // Lazy Load Pages
 const Home = lazy(() => import('./pages/Home'))
+const Covid = lazy(() => import('./pages/Covid/Covid'))
 const DoesNotExist = lazy(() => import('./pages/404'))
 
 export const Routes = () => (
@@ -21,6 +22,9 @@ export const Routes = () => (
       <Switch>
         <Route exact={true} path='/'>
           <Home />
+        </Route>
+        <Route  path='/Covid'>
+          <Covid />
         </Route>
         <Route exact={true} path='/otherPage'>
           <OtherPage />
