@@ -6,11 +6,17 @@ import { CenteredDiv } from "./styles/utils/CenteredDiv";
 import OtherPage from "./pages/OtherPage";
 import AddActivityPage from "./pages/AddActivity";
 
+
 // Lazy Load Pages
+
 const Home = lazy(() => import("./pages/Home"));
 const ActivitiesPage = lazy(() => import("./pages/Activities"));
 const ActivitiesResults = lazy(() => import("./pages/ActivitiesResults"));
 const DoesNotExist = lazy(() => import("./pages/404"));
+
+const TripOverview = lazy(() => import('./pages/trip overview/TripOverview'))
+const NewTrip = lazy(() => import('./pages/new trip/NewTrip'))
+
 
 export const Routes = () => (
   <>
@@ -25,7 +31,13 @@ export const Routes = () => (
         <Route exact={true} path="/">
           <Home />
         </Route>
-        <Route exact={true} path="/otherPage">
+        <Route path='/TripOverview'>
+          <TripOverview />
+        </Route>
+        <Route path='/NewTrip'>
+          <NewTrip />
+        </Route>
+        <Route exact={true} path='/otherPage'>
           <OtherPage />
         </Route>
 
