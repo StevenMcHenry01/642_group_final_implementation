@@ -14,7 +14,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <TopLayout>
         <TopNavbar />
-        <div style={{ flex: 1 }}>
+        <div style={{ maxHeight: 'calc(100vh - 53px)' }}>
           <Routes />
         </div>
         <BottomNavbar />

@@ -7,6 +7,7 @@ import OtherPage from './pages/OtherPage'
 
 // Lazy Load Pages
 const Home = lazy(() => import('./pages/Home'))
+const TripOverview = lazy(() => import('./pages/TripOverview'))
 const DoesNotExist = lazy(() => import('./pages/404'))
 
 export const Routes = () => (
@@ -25,6 +26,7 @@ export const Routes = () => (
         <Route exact={true} path='/otherPage'>
           <OtherPage />
         </Route>
+        <Route path='/trip-overview/:tripName' children={<TripOverview />} />
 
         {/* 404 route */}
         <Route>

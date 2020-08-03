@@ -22,5 +22,8 @@ export const theme = createMuiTheme({
     error: {
       main: '#ff1744',
     },
+    success: {
+      main: 'hsl(138, 79%, 46%)'
+    }
   },
 })
