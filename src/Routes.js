@@ -9,6 +9,9 @@ import AddActivityPage from "./pages/AddActivity";
 
 // Lazy Load Pages
 
+const DayBreakdown = lazy(() => import('./pages/DayBreakdown'))
+
+
 const Covid = lazy(() => import('./pages/Covid/Covid'))
 
 
@@ -18,9 +21,8 @@ const ActivitiesPage = lazy(() => import("./pages/Activities"));
 const ActivitiesResults = lazy(() => import("./pages/ActivitiesResults"));
 const DoesNotExist = lazy(() => import("./pages/404"));
 
-const TripOverview = lazy(() => import('./pages/trip overview/TripOverview'))
-const NewTrip = lazy(() => import('./pages/new trip/NewTrip'))
 
+const NewTrip = lazy(() => import('./pages/new trip/NewTrip'))
 
 
 export const Routes = () => (
@@ -50,6 +52,8 @@ export const Routes = () => (
         <Route exact={true} path='/otherPage'>
           <OtherPage />
         </Route>
+        <Route path='/trip-overview/:tripName' children={<TripOverview />} />
+        <Route path='/day-breakdown/:date' children={<DayBreakdown />} />
 
         <Route exact={true} path="/activities">
           <ActivitiesPage />

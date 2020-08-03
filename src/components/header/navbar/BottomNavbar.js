@@ -1,8 +1,13 @@
 // 3rd party imports
-import React from "react";
+
+import React from 'react'
+import styled from 'styled-components'
+import { useTheme } from '@material-ui/core'
+import { NavLink } from 'react-router-dom'
+
 import styled from "styled-components";
 import { Typography, useTheme, Button } from "@material-ui/core";
-import { NavLink } from "react-router-dom";
+
 
 // My imports
 
@@ -78,4 +83,12 @@ const BottomBar = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-`;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1024px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+`
+
