@@ -28,7 +28,9 @@ const BottomNavbar = () => {
         <BugReportIcon style={{ fontSize: "2rem" }} />
       </NavLink>
       <NavLink
-        to="/trips"
+
+        to='/covid'
+
         activeStyle={{
           color: theme.palette.frequent.white,
           textDecoration: "none",
