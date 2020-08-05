@@ -1,3 +1,4 @@
+
 import * as React from 'react'
 import { lazy, Suspense } from 'react'
 import { Switch, Route } from 'react-router-dom'
@@ -7,9 +8,17 @@ import OtherPage from './pages/OtherPage'
 import CovidRisk from './pages/CovidRisk'
 import Landing from './pages/Landing'
 
+
 // Lazy Load Pages
-const Home = lazy(() => import('./pages/Home'))
-const DoesNotExist = lazy(() => import('./pages/404'))
+
+const DayBreakdown = lazy(() => import('./pages/DayBreakdown'))
+const Covid = lazy(() => import('./pages/Covid/Covid'))
+const Home = lazy(() => import("./pages/Home"));
+const ActivitiesPage = lazy(() => import("./pages/Activities"));
+const ActivitiesResults = lazy(() => import("./pages/ActivitiesResults"));
+const DoesNotExist = lazy(() => import("./pages/404"));
+const NewTrip = lazy(() => import('./pages/new trip/NewTrip'))
+const TripOverview = lazy(()=> import('./pages/trip overview/TripOverview'))
 
 export const Routes = () => (
   <>
@@ -21,18 +30,47 @@ export const Routes = () => (
       }
     >
       <Switch>
-        <Route exact={true} path='/'>
+        <Route exact={true} path="/">
           <Home />
+        </Route>
+
+        <Route path='/Covid'>
+          <Covid />
+        </Route>
+        <Route path='/TripOverview'>
+          <TripOverview />
+        </Route>
+        <Route path='/NewTrip'>
+          <NewTrip />
+
         </Route>
         <Route exact={true} path='/otherPage'>
           <OtherPage />
         </Route>
+
         <Route exact={true} path='/CovidRisk'>
           <CovidRisk />
         </Route>
         <Route exact={true} path='/Landing'>
           <Landing />
         </Route>
+
+        {/* <Route path='/trip-overview/:tripName' children={<TripOverview />} /> */}
+        <Route path='/day-breakdown/:date' children={<DayBreakdown />} />
+
+        <Route exact={true} path="/activities">
+          <ActivitiesPage />
+        </Route>
+
+        <Route exact={true} path="/activities-results">
+          <ActivitiesResults />
+        </Route>
+
+        <Route exact={true} path="/add-activity">
+          <AddActivityPage />
+        </Route>
+
+
         {/* 404 route */}
         <Route>
           <DoesNotExist />
@@ -40,4 +78,4 @@ export const Routes = () => (
       </Switch>
     </Suspense>
   </>
-)
+);
