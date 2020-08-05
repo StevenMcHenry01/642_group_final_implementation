@@ -139,7 +139,7 @@ const SignupForm = () => {
                   format='MM/dd/yyyy'
                   margin='normal'
                   id='date-picker-inline'
-                  label='Date picker inline'
+                  label='Date of birth'
                   value={selectedDate}
                   onChange={handleDateChange}
                 />

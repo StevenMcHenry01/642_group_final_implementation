@@ -25,6 +25,7 @@ const CovidLocationRisk = lazy(() =>
 )
 const Login = lazy(() => import('./pages/login/Login'))
 const Signup = lazy(() => import('./pages/signup/Signup'))
+const Account = lazy(() => import('./pages/account/Account'))
 
 export const Routes = () => {
   const { user } = useAppState()
@@ -54,9 +55,12 @@ export const Routes = () => {
           <Route exact={true} path='/Login' children={<Login />} />
           <Route exact={true} path='/Signup' children={<Signup />} />
 
-          {/* protexted */}
+          {/* protected */}
           <Route exact={true} path='/activities'>
             {user ? <Activities /> : <Redirect to='/' />}
+          </Route>
+          <Route exact={true} path='/account'>
+            {user ? <Account /> : <Redirect to='/' />}
           </Route>
           <Route exact={true} path='/new-trip'>
             {user ? <NewTrip /> : <Redirect to='/' />}

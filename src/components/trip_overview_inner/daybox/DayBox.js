@@ -2,6 +2,7 @@
 import React from 'react'
 import { makeStyles, Button, Typography } from '@material-ui/core'
 import { grey } from '@material-ui/core/colors'
+import { Link } from 'react-router-dom'
 
 // My imports
 
@@ -41,9 +42,18 @@ const DayBox = ({ dayNumber, date, description }) => {
       <Typography style={{ width: '100px', fontSize: '12px' }}>
         {description}
       </Typography>
-      <Button className={classes.viewButon} variant='contained' color='primary'>
-        View
-      </Button>
+      <Link
+        style={{ textDecoration: 'none' }}
+        to='/day-breakdown/August 5 2020'
+      >
+        <Button
+          className={classes.viewButon}
+          variant='contained'
+          color='primary'
+        >
+          View
+        </Button>
+      </Link>
     </div>
   )
 }

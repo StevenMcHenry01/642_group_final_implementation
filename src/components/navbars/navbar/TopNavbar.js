@@ -46,11 +46,13 @@ const TopNavbar = () => {
         </Typography>
       </div>
       {user ? (
-        <Button className={classes.chipButton} variant='contained'>
-          Account
-        </Button>
+        <Link style={{ textDecoration: 'none' }} to='/account'>
+          <Button className={classes.chipButton} variant='contained'>
+            Account
+          </Button>
+        </Link>
       ) : (
-        <Link to='/signup' style={{textDecoration: 'none'}}>
+        <Link to='/signup' style={{ textDecoration: 'none' }}>
           <Button className={classes.chipButton} variant='contained'>
             Sign Up
           </Button>

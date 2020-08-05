@@ -5,13 +5,15 @@ import {
   FormControl,
   FormControlLabel,
   Checkbox,
+  Button,
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import Button from '@material-ui/core/Button'
 import { useForm, Controller } from 'react-hook-form'
+import { useHistory, Link } from 'react-router-dom'
 
 const NewTripForm = () => {
-  const { register, handleSubmit, control } = useForm()
+  const { register, handleSubmit, control, getValues } = useForm()
+  const history = useHistory()
 
   return (
     <div>
@@ -19,10 +21,7 @@ const NewTripForm = () => {
         Creat your new trip
       </Typography>
       <br />
-      <form
-        noValidate
-        onSubmit={handleSubmit((date) => alert(JSON.stringify(date)))}
-      >
+      <form noValidate onSubmit={() => history.push('/')}>
         <Typography component='h3' variant='h8'>
           Your title:
         </Typography>
@@ -36,6 +35,21 @@ const NewTripForm = () => {
           label='Please enter your trip title'
           name='title'
           autoComplete='title'
+          autoFocus
+        />
+        <Typography component='h3' variant='h8'>
+          Description of your trip
+        </Typography>
+        <TextField
+          variant='outlined'
+          margin='normal'
+          inputRef={register}
+          required
+          fullWidth
+          id='des'
+          label='Description:'
+          name='des'
+          autoComplete='des'
           autoFocus
         />
         <Typography component='h3' variant='h8'>
@@ -120,20 +134,47 @@ const NewTripForm = () => {
         <br />
         <br />
         <FormControlLabel
-            control ={
-            <Controller as ={Checkbox} control ={control} name ="DoWantFlight" defaultValue={false}/>}
-            label= "Do you want to add the flight ?"
+          control={
+            <Controller
+              as={Checkbox}
+              control={control}
+              name='DoWantFlight'
+              defaultValue={false}
+            />
+          }
+          label='Do you want to add the flight ?'
         />
         <FormControlLabel
-            control ={
-            <Controller as ={Checkbox} control ={control} name ="DoWantHotel" defaultValue={false}/>}
-            label= "Do you want to add the hotel ?"
+          control={
+            <Controller
+              as={Checkbox}
+              control={control}
+              name='DoWantHotel'
+              defaultValue={false}
+            />
+          }
+          label='Do you want to add the hotel ?'
         />
-        <br />
-        <br />
-        <Button type='submit' 
-        variant='contained'
-        >Submit</Button>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Link
+            style={{ textDecoration: 'none', marginBottom: '1rem'}}
+            to={`/covid-location-risk/berlin`}
+          >
+            <Button variant='contained' color='secondary'>
+              View Location Risk
+            </Button>
+          </Link>
+          <Button type='submit' variant='contained' color='primary' style={{color: 'white'}}>
+            Submit
+          </Button>
+        </div>
       </form>
     </div>
   )

@@ -8,39 +8,39 @@ import DayBox from './daybox/DayBox'
 const dayData = [
   {
     dayNumber: 'Day 1',
-    date: 'July 3 - 2020',
+    date: 'August 5 - 2020',
     description:
       'Mostly a day of exploring the town and getting the lay of the land.',
   },
   {
     dayNumber: 'Day 2',
-    date: 'July 4 - 2020',
+    date: 'August 6 - 2020',
     description: 'Aquarium day! Then finish with a nice dinner.',
   },
   {
     dayNumber: 'Day 3',
-    date: 'July 5 - 2020',
+    date: 'August 7 - 2020',
     description: 'Getting ready to leave and seeing grandparents',
   },
   {
     dayNumber: 'Day 4',
-    date: 'July 6 - 2020',
+    date: 'August 8 - 2020',
     description:
       'Mostly a day of exploring the town and getting the lay of the land.',
   },
   {
     dayNumber: 'Day 5',
-    date: 'July 7 - 2020',
+    date: 'August 9 - 2020',
     description: 'Meeting with friends at the park and wine tasting.',
   },
   {
     dayNumber: 'Day 6',
-    date: 'July 8 - 2020',
+    date: 'August 10 - 2020',
     description: 'Aquarium day! Then finish with a nice dinner',
   },
   {
     dayNumber: 'Day 7',
-    date: 'July 9 - 2020',
+    date: 'August 11 - 2020',
     description: 'Flying home.',
   },
 ]

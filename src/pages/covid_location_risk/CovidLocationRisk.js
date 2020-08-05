@@ -1,76 +1,152 @@
 // 3rd party imports
 import React from 'react'
 // My imports
-import Typograhpy from '@material-ui/core/Typography'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
+import {
+  Typography,
+  makeStyles,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
+} from '@material-ui/core'
 import { useParams } from 'react-router-dom'
+import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions'
+import LocationSearchingIcon from '@material-ui/icons/LocationSearching'
+import PanToolIcon from '@material-ui/icons/PanTool'
+import worldImage from '../../assets/images/undraw_connected_world_wuay.svg'
+
+const useStyles = makeStyles((theme) => ({
+  wrapper: {
+    textAlign: 'center',
+    padding: '1rem',
+  },
+  list: {
+    backgroundColor: theme.palette.frequent.darkGrey,
+    color: theme.palette.frequent.white,
+    borderRadius: '5px',
+  },
+}))
 
 const CovidLocationRisk = () => {
   const { location } = useParams()
+  const classes = useStyles()
   let risk = Math.floor(Math.random() * Math.floor(3))
-  console.log(risk)
   if (risk === 0) {
     return (
-      <div>
-        <Typograhpy align='center' variant='h5'>
-          The Covid-19 Risk at {location}
-        </Typograhpy>
-        <Typograhpy align='center' variant='h1' style={{ color: '#336600' }}>
+      <div className={classes.wrapper}>
+        <Typography align='center' variant='h5'>
+          The Covid-19 Risk at <strong>{location}</strong>:
+        </Typography>
+        <Typography
+          align='center'
+          variant='h2'
+          style={{ color: 'hsl(138, 79%, 46%)' }}
+        >
           LOW
-        </Typograhpy>
-        {/*I can get this to stick to the bottom of the page*/}
-        <Typograhpy>Please follow these safety precautions</Typograhpy>
-        <List>
-          <ListItem>Wear a Mask</ListItem>
-          <ListItem>Maintain a 6 foot distance from others</ListItem>
-          <ListItem>Wash your hands regularly</ListItem>
-          <ListItem>
-            Stay home if you are experiencing sympotoms of COVID-19
-          </ListItem>
-        </List>
+        </Typography>
+        <img src={worldImage} alt='world' style={{ width: '90%' }} />
+        <Typography style={{margin: '2rem 0 1rem 0'}}>Please follow these safety precautions</Typography>
+        <div className={classes.list}>
+          <List>
+            <ListItem>
+              <ListItemIcon>
+                <EmojiEmotionsIcon style={{ color: 'white' }} />
+              </ListItemIcon>
+              <ListItemText>Wear a Mask</ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <LocationSearchingIcon style={{ color: 'white' }} />
+              </ListItemIcon>
+              <ListItemText>
+                Maintain a 6 foot distance from others
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <PanToolIcon style={{ color: 'white' }} />
+              </ListItemIcon>
+              <ListItemText>Wash your hands regularly</ListItemText>
+            </ListItem>
+          </List>
+        </div>
       </div>
     )
   } else if (risk === 1) {
     return (
-      <div>
-        <Typograhpy align='center' variant='h5'>
-          The Covid-19 Risk at {location}
-        </Typograhpy>
-        <Typograhpy align='center' variant='h1' style={{ color: '#FF9900' }}>
+      <div className={classes.wrapper}>
+        <Typography align='center' variant='h5'>
+          The Covid-19 Risk at <strong>{location}</strong>:
+        </Typography>
+        <Typography align='center' variant='h2' style={{ color: '#ffd166' }}>
           MEDIUM
-        </Typograhpy>
-        {/*I can get this to stick to the bottom of the page*/}
-        <Typograhpy>Please follow these safety precautions</Typograhpy>
-        <List>
-          <ListItem>Wear a Mask</ListItem>
-          <ListItem>Maintain a 6 foot distance from others</ListItem>
-          <ListItem>Wash your hands regularly</ListItem>
-          <ListItem>
-            Stay home if you are experiencing sympotoms of COVID-19
-          </ListItem>
-        </List>
+        </Typography>
+        <img src={worldImage} alt='world' style={{ width: '90%' }} />
+        <Typography style={{margin: '2rem 0 1rem 0'}}>Please follow these safety precautions</Typography>
+        <div className={classes.list}>
+          <List>
+            <ListItem>
+              <ListItemIcon>
+                <EmojiEmotionsIcon style={{ color: 'white' }} />
+              </ListItemIcon>
+              <ListItemText>Wear a Mask</ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <LocationSearchingIcon style={{ color: 'white' }} />
+              </ListItemIcon>
+              <ListItemText>
+                Maintain a 6 foot distance from others
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <PanToolIcon style={{ color: 'white' }} />
+              </ListItemIcon>
+              <ListItemText>Wash your hands regularly</ListItemText>
+            </ListItem>
+          </List>
+        </div>
       </div>
     )
   } else {
     return (
-      <div>
-        <Typograhpy align='center' variant='h5'>
-          The Covid-19 Risk at {location}
-        </Typograhpy>
-        <Typograhpy align='center' variant='h1' style={{ color: '#FF0000' }}>
+      <div className={classes.wrapper}>
+        <Typography align='center' variant='h5'>
+          The Covid-19 Risk at <strong>{location}</strong>:
+        </Typography>
+        <Typography align='center' variant='h2' style={{ color: '#ff1744' }}>
           HIGH
-        </Typograhpy>
-        <Typograhpy>Avoid going out at all costs</Typograhpy>
-        {/*I can get this to stick to the bottom of the page*/}
-        <Typograhpy>
+        </Typography>
+        <img src={worldImage} alt='world' style={{ width: '90%' }} />
+        <Typography variant='h4'>Avoid visiting if possible</Typography>
+        <Typography>
           If you must go out, please follow these safety precautions
-        </Typograhpy>
-        <List>
-          <ListItem>Wear a Mask</ListItem>
-          <ListItem>Maintain a 6 foot distance from others</ListItem>
-          <ListItem>Wash your hands regularly</ListItem>
-        </List>
+        </Typography>
+        <div className={classes.list}>
+          <List>
+            <ListItem>
+              <ListItemIcon>
+                <EmojiEmotionsIcon style={{ color: 'white' }} />
+              </ListItemIcon>
+              <ListItemText>Wear a Mask</ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <LocationSearchingIcon style={{ color: 'white' }} />
+              </ListItemIcon>
+              <ListItemText>
+                Maintain a 6 foot distance from others
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <PanToolIcon style={{ color: 'white' }} />
+              </ListItemIcon>
+              <ListItemText>Wash your hands regularly</ListItemText>
+            </ListItem>
+          </List>
+        </div>
       </div>
     )
   }
