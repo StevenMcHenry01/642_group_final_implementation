@@ -1,5 +1,5 @@
 import React from 'react'
-import NewTripForm from '../../components/NewTripForm/NewTripForm'
+import NewTripForm from '../../components/new_trip_form/NewTripForm'
 
 const NewTrip= () => {
     return(

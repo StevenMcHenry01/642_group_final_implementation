@@ -4,12 +4,12 @@ import React from 'react'
 // My imports
 
 
-const Covid = () => {
+const CovidOverview = () => {
     return(
         <div>H</div>
     )
 }
 
-export default Covid
+export default CovidOverview
 
 //Styling

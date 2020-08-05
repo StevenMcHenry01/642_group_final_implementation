@@ -1,81 +1,84 @@
-
+// 3rd party imports
 import * as React from 'react'
 import { lazy, Suspense } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
+
+// my imports
 import Loading from './components/utils/Loading'
 import { CenteredDiv } from './styles/utils/CenteredDiv'
-import OtherPage from './pages/OtherPage'
-import CovidRisk from './pages/CovidRisk'
-import Landing from './pages/Landing'
-
+import { useAppState } from './contexts/AppContext'
 
 // Lazy Load Pages
+const DayBreakdown = lazy(() => import('./pages/day_breakdown/DayBreakdown'))
+const CovidOverview = lazy(() => import('./pages/covid_overview/CovidOverview'))
+const Activities = lazy(() => import('./pages/activities/Activities'))
+const ActivitiesResults = lazy(() =>
+  import('./pages/activities_results/ActivitiesResults')
+)
+const DoesNotExist = lazy(() => import('./pages/404/404'))
+const NewTrip = lazy(() => import('./pages/new_trip/NewTrip'))
+const TripOverview = lazy(() => import('./pages/trip_overview/TripOverview'))
+const AddActivity = lazy(() => import('./pages/add_activity/AddActivity'))
+const Landing = lazy(() => import('./pages/landing/Landing'))
+const CovidLocationRisk = lazy(() =>
+  import('./pages/covid_location_risk/CovidLocationRisk')
+)
+const Login = lazy(() => import('./pages/login/Login'))
+const Signup = lazy(() => import('./pages/signup/Signup'))
 
-const DayBreakdown = lazy(() => import('./pages/DayBreakdown'))
-const Covid = lazy(() => import('./pages/Covid/Covid'))
-const Home = lazy(() => import("./pages/Home"));
-const ActivitiesPage = lazy(() => import("./pages/Activities"));
-const ActivitiesResults = lazy(() => import("./pages/ActivitiesResults"));
-const DoesNotExist = lazy(() => import("./pages/404"));
-const NewTrip = lazy(() => import('./pages/new trip/NewTrip'))
-const TripOverview = lazy(()=> import('./pages/trip overview/TripOverview'))
+export const Routes = () => {
+  const { user } = useAppState()
 
-export const Routes = () => (
-  <>
-    <Suspense
-      fallback={
-        <CenteredDiv>
-          <Loading />
-        </CenteredDiv>
-      }
-    >
-      <Switch>
-        <Route exact={true} path="/">
-          <Home />
-        </Route>
+  return (
+    <>
+      <Suspense
+        fallback={
+          <CenteredDiv>
+            <Loading />
+          </CenteredDiv>
+        }
+      >
+        <Switch>
+          {/* unprotected */}
+          <Route exact={true} path='/' children={<Landing />} />
+          <Route
+            path='/covid-location-risk/:location'
+            children={<CovidLocationRisk />}
+          />
 
-        <Route path='/Covid'>
-          <Covid />
-        </Route>
-        <Route path='/TripOverview'>
-          <TripOverview />
-        </Route>
-        <Route path='/NewTrip'>
-          <NewTrip />
+          <Route
+            exact={true}
+            path='/covid-overview'
+            children={<CovidOverview />}
+          />
+          <Route exact={true} path='/Login' children={<Login />} />
+          <Route exact={true} path='/Signup' children={<Signup />} />
 
-        </Route>
-        <Route exact={true} path='/otherPage'>
-          <OtherPage />
-        </Route>
+          {/* protexted */}
+          <Route exact={true} path='/activities'>
+            {user ? <Activities /> : <Redirect to='/' />}
+          </Route>
+          <Route exact={true} path='/new-trip'>
+            {user ? <NewTrip /> : <Redirect to='/' />}
+          </Route>
+          <Route exact={true} path='/add-activity'>
+            {user ? <AddActivity /> : <Redirect to='/' />}
+          </Route>
+          <Route path='/trip-overview/:tripName'>
+            {user ? <TripOverview /> : <Redirect to='/' />}
+          </Route>
 
-        <Route exact={true} path='/CovidRisk'>
-          <CovidRisk />
-        </Route>
-        <Route exact={true} path='/Landing'>
-          <Landing />
-        </Route>
+          <Route path='/day-breakdown/:date'>
+            {user ? <DayBreakdown /> : <Redirect to='/' />}
+          </Route>
 
-        {/* <Route path='/trip-overview/:tripName' children={<TripOverview />} /> */}
-        <Route path='/day-breakdown/:date' children={<DayBreakdown />} />
+          <Route path='/activities-results/:search'>
+            {user ? <ActivitiesResults /> : <Redirect to='/' />}
+          </Route>
 
-        <Route exact={true} path="/activities">
-          <ActivitiesPage />
-        </Route>
-
-        <Route exact={true} path="/activities-results">
-          <ActivitiesResults />
-        </Route>
-
-        <Route exact={true} path="/add-activity">
-          <AddActivityPage />
-        </Route>
-
-
-        {/* 404 route */}
-        <Route>
-          <DoesNotExist />
-        </Route>
-      </Switch>
-    </Suspense>
-  </>
-);
+          <Route children={<DoesNotExist />} />
+        </Switch>
+      </Suspense>
+    </>
+  )
+}

@@ -3,7 +3,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 
 // My imports
-import TripOverviewInner from '../components/trip_overview_inner/TripOverviewInner'
+import TripOverviewInner from '../../components/trip_overview_inner/TripOverviewInner'
 
 const TripOverview = () => {
   const {tripName} = useParams()

@@ -1,6 +1,6 @@
 // 3rd party imports
-import React from "react";
-import { Typography } from "@material-ui/core";
+import React from "./node_modules/react";
+import { Typography } from "./node_modules/@material-ui/core";
 
 // My imports
 import LinkActive from "./LinkActive";
