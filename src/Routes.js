@@ -4,6 +4,8 @@ import { Switch, Route } from 'react-router-dom'
 import Loading from './components/utils/Loading'
 import { CenteredDiv } from './styles/utils/CenteredDiv'
 import OtherPage from './pages/OtherPage'
+import CovidRisk from './pages/CovidRisk'
+import Landing from './pages/Landing'
 
 // Lazy Load Pages
 const Home = lazy(() => import('./pages/Home'))
@@ -25,7 +27,12 @@ export const Routes = () => (
         <Route exact={true} path='/otherPage'>
           <OtherPage />
         </Route>
-
+        <Route exact={true} path='/CovidRisk'>
+          <CovidRisk />
+        </Route>
+        <Route exact={true} path='/Landing'>
+          <Landing />
+        </Route>
         {/* 404 route */}
         <Route>
           <DoesNotExist />
