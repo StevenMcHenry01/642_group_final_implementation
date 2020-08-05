@@ -88,7 +88,7 @@ const Account = () => {
         />
       </div>
       <Button
-        variant='outline'
+        variant='outlined'
         color='secondary'
         onClick={() => {
           setUser(null)
