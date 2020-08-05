@@ -1,8 +1,8 @@
 // 3rd party imports
-import React from 'react'
-import styled from 'styled-components'
-import { NavLink } from 'react-router-dom'
-import { grey, red } from '@material-ui/core/colors'
+import React from './node_modules/react'
+import styled from './node_modules/styled-components'
+import { NavLink } from './node_modules/react-router-dom'
+import { grey, red } from './node_modules/@material-ui/core/colors'
 
 const LinkActive = ({ children, to }) => (
   <NavLinkStyled

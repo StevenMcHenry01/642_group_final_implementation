@@ -17,8 +17,6 @@ const TopLayout = ({ children }) => {
 const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  justify-content: space-between;
   margin: 0 auto;
   max-width: 1024px;
 `
