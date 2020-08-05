@@ -38,6 +38,21 @@ const NewTripForm = () => {
           autoComplete='title'
           autoFocus
         />
+                <Typography component='h3' variant='h8'>
+          Description of your trip
+        </Typography>
+        <TextField
+          variant='outlined'
+          margin='normal'
+          inputRef={register}
+          required
+          fullWidth
+          id='des'
+          label='Description:'
+          name='des'
+          autoComplete='des'
+          autoFocus
+        />
         <Typography component='h3' variant='h8'>
           Where are you going to:
         </Typography>
