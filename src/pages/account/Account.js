@@ -21,12 +21,12 @@ const useStyles = makeStyles((theme) => ({
   },
   textField: {
     width: '80%',
-    marginBottom: '1rem'
+    marginBottom: '1rem',
   },
 }))
 
 const Account = () => {
-  const { user } = useAppState()
+  const { user, setUser } = useAppState()
   const classes = useStyles()
   return (
     <div className={classes.wrapper}>
@@ -38,7 +38,9 @@ const Account = () => {
         </Button>
       </Link>
       <div style={{ margin: '2rem 0' }}>
-        <Typography variant='h6' style={{marginBottom: '1rem'}}>Personal Info</Typography>
+        <Typography variant='h6' style={{ marginBottom: '1rem' }}>
+          Personal Info
+        </Typography>
         <TextField
           disabled
           variant='outlined'
@@ -85,6 +87,15 @@ const Account = () => {
           }}
         />
       </div>
+      <Button
+        variant='outline'
+        color='secondary'
+        onClick={() => {
+          setUser(null)
+        }}
+      >
+        Logout
+      </Button>
     </div>
   )
 }
